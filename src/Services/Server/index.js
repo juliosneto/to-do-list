@@ -25,7 +25,23 @@ app.post("/cadastrarUsuario", async(req, res) => {
         })
         console.log("Usuário cadastrado com sucesso")
     } catch {
-        console.error(res.status(500))
+        (err) => console.error("Erro ao cadastrar usuário: " + err)
+    }
+})
+
+app.post("/login", async(req, res) => {
+    const {email, senha} = req.body
+    try {
+        const user = await Usuario.findOne({
+            where: {email, senha}
+        })
+        if (user) {
+            console.log("Usuário autenticado com sucesso")
+        } else {
+            console.log("Credenciais inválidas")
+        }
+    } catch {
+        console.error("Erro ao autenticar usuário")
     }
 })
 

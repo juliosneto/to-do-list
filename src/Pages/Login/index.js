@@ -1,7 +1,33 @@
 import "./Login.css"
-import { Link } from "react-router-dom"
+import axios from "axios"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Login() {
+
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const handleSenha = (e) => {
+        setSenha(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const dados = {email, senha}
+        try {
+            axios.post("http://localhost:3001/login", dados)
+            navigate("/home", {replace: true})
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
     return (
         <div className="pagina">
             <div className="container">
@@ -12,9 +38,9 @@ export default function Login() {
                 <div className="borda"></div>
                 <div className="formulario">
                     <h1>Entrar</h1>
-                    <form className="form-login">
-                        <input type="email" placeholder="E-mail" id="email"/>
-                        <input type="password" placeholder="Senha" id="password"/>
+                    <form className="form-login" onSubmit={handleSubmit}>
+                        <input type="email" placeholder="E-mail" id="email" value={email} onChange={handleEmail}/>
+                        <input type="password" placeholder="Senha" id="password" value={senha} onChange={handleSenha}/>
                         <button type="submit">Entrar</button>
                     </form>
                 </div>

@@ -90,6 +90,12 @@
     transition: 0.17s;
 }
 
+.form-cadastro button:disabled {
+    background-color: #368550;
+    color: #B8D6C2;
+    cursor: default;
+}
+
 .link {
     text-decoration: none;
     color: white;

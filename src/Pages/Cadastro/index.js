@@ -1,7 +1,7 @@
 import "./Cadastro.css"
+import axios from "axios"
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
 
 export default function Cadastro() {
 
@@ -22,12 +22,12 @@ export default function Cadastro() {
         setSenha(e.target.value)
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         const dados = {nome, email, senha}
         try {
-            await axios.post("http://localhost:3001/cadastrarUsuario", dados)
-            navigate("/login")
+            axios.post("http://localhost:3001/cadastrarUsuario", dados)
+            navigate("/", {replace: true})
         } catch (err) {
             console.error(err)
         }
@@ -47,7 +47,7 @@ export default function Cadastro() {
                         <input type="text" placeholder="Nome" id="nome" value={nome} onChange={handleNome}/>
                         <input type="email" placeholder="E-mail" id="email" value={email} onChange={handleEmail}/>
                         <input type="password" placeholder="Senha" id="password" value={senha} onChange={handleSenha}/>
-                        <button type="submit">Cadastrar</button>
+                        <button type="submit" disabled={nome === "" || email === ""|| senha === ""}>Cadastrar</button>
                     </form>
                 </div>
             </div>

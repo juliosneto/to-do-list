@@ -30,39 +30,33 @@ export default function Login() {
   };
 
   return (
-    <div className="pagina">
-      <div className="container">
-        <div className="titulo-site">
-          <h1 className="h1-login">to do list</h1>
-          <h4 className="h4-login">Sua lista de tarefas</h4>
-        </div>
-        <div className="borda"></div>
-        <div className="formulario">
-          <h1>Entrar</h1>
-          <form className="form-login" onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder="E-mail"
-              id="email"
-              value={email}
-              onChange={handleEmail}
-            />
-            <input
-              type="password"
-              placeholder="Senha"
-              id="password"
-              value={senha}
-              onChange={handleSenha}
-            />
-            <button type="submit" disabled={email === "" || senha === ""}>
-              Entrar
-            </button>
-          </form>
-        </div>
+    <div className="pagina-login">
+      <div className="formulario">
+        <h1>Entrar na conta</h1>
+        <form className="form-login" onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="E-mail"
+            id="email"
+            value={email}
+            onChange={handleEmail}
+          />
+          <input
+            type="password"
+            placeholder="Senha"
+            id="password"
+            value={senha}
+            onChange={handleSenha}
+          />
+          <button type="submit" disabled={email === "" || senha === ""}>
+            Entrar
+          </button>
+          <Link to="/criarconta" className="link">
+          Não tem uma conta? <span className="entrar-link">Criar conta</span>
+        </Link>
+        </form>
       </div>
-      <Link to="/criarconta" className="link">
-        Crie sua conta.
-      </Link>
     </div>
+
   );
 }

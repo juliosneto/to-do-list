@@ -37,21 +37,20 @@ export default function Cadastro() {
         <div className="pagina">
             <div className="container">
                 <div className="titulo-site">
-                    <h1 className="h1-cadastro">to do list</h1>
+                    <h1 className="h1-cadastro">to do <span className="titulo-azul">list</span></h1>
                     <h4 className="h4-cadastro">Sua lista de tarefas</h4>
                 </div>
-                <div className="borda"></div>
-                <div className="formulario">
-                    <h1>Criar conta</h1>
+            </div>
+            <div className="formulario">
+                    <h1>Cadastro</h1>
                     <form className="form-cadastro" onSubmit={handleSubmit}>
                         <input type="text" placeholder="Nome" id="nome" value={nome} onChange={handleNome}/>
                         <input type="email" placeholder="E-mail" id="email" value={email} onChange={handleEmail}/>
                         <input type="password" placeholder="Senha" id="password" value={senha} onChange={handleSenha}/>
                         <button type="submit" disabled={nome === "" || email === ""|| senha === ""}>Cadastrar</button>
                     </form>
+                    <Link to="/" className="link">Já tem uma conta? <span className="entrar-link">Entrar</span></Link>
                 </div>
-            </div>
-            <Link to="/" className="link">Entre na sua conta.</Link>
         </div>
     )
 }

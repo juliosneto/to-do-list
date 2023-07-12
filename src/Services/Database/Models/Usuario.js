@@ -17,5 +17,16 @@ const Usuario = Connection.define("usuario", {
     }
 })
 
+const Tarefa = Connection.define("tarefa", {
+    titulo: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    descricao: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    }
+});
+
 Usuario.sync({force: false})
-module.exports = Usuario
+module.exports = {Usuario, Tarefa}

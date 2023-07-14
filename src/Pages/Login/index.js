@@ -1,36 +1,36 @@
-import "./Login.css";
-import axios from "axios";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import "./Login.css"
+import axios from "axios"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Login() {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSenha = (e) => {
-    setSenha(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const dados = { email, senha };
-    try {
-      const response = await axios.post("http://localhost:3001/login", dados);
-      const token = response.data.token;
-      localStorage.setItem("token", token);
-      navigate("/home", { replace: true });
-    } catch (err) {
-      console.error(err);
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
     }
-  };
 
-  return (
-    <div className="pagina-login">
+    const handleSenha = (e) => {
+        setSenha(e.target.value)
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const dados = { email, senha }
+        try {
+            const response = await axios.post("http://localhost:3001/login", dados)
+            const token = response.data.token
+            localStorage.setItem("token", token)
+            navigate("/home", { replace: true })
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    return (
+<div className="pagina-login">
       <div className="formulario">
         <h1>Entrar na conta</h1>
         <form className="form-login" onSubmit={handleSubmit}>
@@ -57,6 +57,5 @@ export default function Login() {
         </form>
       </div>
     </div>
-
-  );
+    )
 }

@@ -32,7 +32,7 @@ export default function Cadastro() {
             console.error(err)
         }
     }
-
+    
     return (
         <div className="pagina">
             <div className="container">

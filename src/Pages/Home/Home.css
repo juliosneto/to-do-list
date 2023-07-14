@@ -1,0 +1,117 @@
+.pagina-home {
+    width: 100vw;
+    height: 100vh;
+    background-color: #091520;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #060D14;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nome-usuario, .nav-logo {
+    color: #FFFFFF;
+    font-family: 'Poppins';
+}
+
+.nav-logo {
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    left: 47%;
+}
+
+.logout-button {
+    background-color: #DE2D2D;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.img {
+    width: 30px;
+    padding: 2px;
+    padding-bottom: 0px;
+}
+
+.container-home {
+    margin-top: 40px;
+}
+
+.form-home {
+   display: flex;
+   flex-direction: column;
+   max-width: 400px;
+   margin: 0 auto;
+}
+
+.input-tarefa {
+    margin-bottom: 30px;
+    background-color: transparent;
+    border: 0;
+    border: 1px solid #FFFFFF;
+    height: 40px;
+    border-radius: 90px;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.button-tarefa {
+    border: 0;
+    color: white;
+    background-color: #4BB76F;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 250px;
+    height: 40px;
+    border-radius: 90px;
+    margin: 0 auto;
+}
+
+.button-tarefa:hover {
+    background-color: #368550;
+    transition: 0.17s;
+}
+
+.button-tarefa:disabled {
+    background-color: #368550;
+    color: #B8D6C2;
+    cursor: default;
+}
+
+.container-tarefas {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-top: 1px solid #658097;
+}
+
+.box-tarefa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tarefa {
+    color: #FFFFFF;
+    font-family: 'Poppins';
+}
+
+.check-button {
+    background-color: #16E1C6;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}

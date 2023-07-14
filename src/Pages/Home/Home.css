@@ -34,9 +34,10 @@ nav {
     cursor: pointer;
 }
 
-.img-logout {
+.img {
     width: 30px;
-    padding: 3px;
+    padding: 2px;
+    padding-bottom: 0px;
 }
 
 .container-home {
@@ -88,3 +89,29 @@ nav {
     cursor: default;
 }
 
+.container-tarefas {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-top: 1px solid #658097;
+}
+
+.box-tarefa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tarefa {
+    color: #FFFFFF;
+    font-family: 'Poppins';
+}
+
+.check-button {
+    background-color: #16E1C6;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}

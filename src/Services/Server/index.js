@@ -82,11 +82,11 @@ app.get("/usuario", async (req, res) => {
 app.post("/inserirTarefa", async (req, res) => {
     const tarefa = req.body.tarefa
     try {
-        await Tarefa.create({
+        const novaTarefa = await Tarefa.create({
             tarefa: tarefa
         })
         console.log("Tarefa inserida com sucesso")
-        res.status(200).json({message: "Tarefa inserida com sucesso"})
+        res.status(200).json({id: novaTarefa.id, message: "Tarefa inserida com sucesso"})
     } catch (error) {
         console.error("Erro ao inserir tarefa 1", error)
         res.status(500).json({message: "Erro ao inserir tarefa 2"})
@@ -102,6 +102,21 @@ app.get("/receberTarefa", async (req, res) => {
         res.json(tarefas)
     } catch (error) {
         console.error("Erro ao renderizar a tarefa: ", error)
+    }
+})
+
+app.delete("/removerTarefa/:id", async (req, res) => {
+    const tarefaId = req.params.id
+    try {
+        await Tarefa.destroy({
+            where: {
+                id: tarefaId
+            }
+        })
+        res.status(200).json({message: "Tarefa removida com sucesso"})
+    } catch (error) {
+        console.error("Erro ao remover tarefa", error)
+        res.status(500).json({message: "Erro ao remover tarefa"})
     }
 })
 

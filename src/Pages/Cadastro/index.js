@@ -34,7 +34,7 @@ export default function Cadastro() {
     }
 
     return (
-        <div className="pagina">
+        <div className="pagina-cadastro">
             <div className="container">
                 <div className="titulo-site">
                     <h1 className="h1-cadastro">to do <span className="titulo-azul">list</span></h1>

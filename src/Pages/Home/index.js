@@ -71,8 +71,8 @@ export default function Home () {
         <div className="pagina-home">
             <nav>
                 <span className="nome-usuario">Bem vindo, {nome}!</span>
-                <span className="nav-logo">to do list</span>
-                <button className="logout-button" onClick={() => navigate("/")}><img className="img" src={Logout} alt="Símbolo de saída"/></button>
+                <span className="nav-logo">to do <span className="list-azul">list</span></span>
+                <button className="logout-button" onClick={() => navigate("/")}>Deslogar</button>
             </nav>
             <main className="container-home">
                 <form className="form-home" onSubmit={handleSubmit}>

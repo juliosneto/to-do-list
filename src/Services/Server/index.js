@@ -80,7 +80,7 @@ app.get("/usuario", async (req, res) => {
 })
 
 app.post("/inserirTarefa", async (req, res) => {
-    const tarefa = req.body
+    const tarefa = req.body.tarefa
     try {
         await Tarefa.create({
             tarefa: tarefa
@@ -88,10 +88,11 @@ app.post("/inserirTarefa", async (req, res) => {
         console.log("Tarefa inserida com sucesso")
         res.status(200).json({message: "Tarefa inserida com sucesso"})
     } catch (error) {
-        console.error("Erro ao inserir tarefa", error)
-        res.status(500).json({message: "Erro ao inserir tarefa"})
+        console.error("Erro ao inserir tarefa 1", error)
+        res.status(500).json({message: "Erro ao inserir tarefa 2"})
     }
 })
+
 
 app.get("/receberTarefa", async (req, res) => {
     try {

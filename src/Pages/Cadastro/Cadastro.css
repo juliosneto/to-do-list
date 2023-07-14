@@ -1,22 +1,21 @@
 .pagina-cadastro {
     width: 100vw;
     height: 100vh;
-    background-color: #091520;
+    background-color: #FFF;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 .container {
-    width: 1000px;
-    height: 600px;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 1px solid #5B5B5B;
-    border-radius: 10px;
+    background-color: #E0EFFE;
 }
 
 .titulo-site {
@@ -25,30 +24,34 @@
 }
 
 .h1-cadastro, .h4-cadastro, .formulario h1 {
-    color: white;
+    color: #1C1D22;
     font-family: 'Poppins', sans-serif;
 }
 
 .h1-cadastro {
+    color: #1C1D22;
     font-size: 90px;
+    font-family: Exo 2;
+    font-size: 122px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
 }
 
 .h4-cadastro {
-    font-size: 30px;
-}
-
-.borda {
-    position: relative;
-    top: 0;
-    left: 0 auto;
-    width: 1px;
-    height: 100%;
-    background-color: #5B5B5B;
+    font-size: 40px;
+    color: #1C1D22;
 }
 
 .formulario {
     margin: 0 auto;
     text-align: center;
+    background-color: #FFF;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
 }
 
 .formulario h1 {
@@ -59,6 +62,7 @@
     width: 250px;
     display: flex;
     flex-direction: column;
+    
 }
 
 .form-cadastro input {
@@ -68,9 +72,9 @@
     border-radius: 10px;
     height: 40px;
     padding-left: 5px;
-    border: 1px solid #5B5B5B;
+    border: 0.5px solid #5B5B5B;
     font-size: 15px;
-    color: white;
+    color: #1C1D22;
 }
 
 .form-cadastro button {
@@ -78,7 +82,7 @@
     border: 0;
     border-radius: 10px;
     color: white;
-    background-color: #4BB76F;
+    background-color: #007DFA;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
@@ -86,19 +90,29 @@
 }
 
 .form-cadastro button:hover {
-    background-color: #368550;
+    background-color: #007DFA;
     transition: 0.17s;
 }
 
 .form-cadastro button:disabled {
-    background-color: #368550;
-    color: #B8D6C2;
+    background-color: #007DFA;
+    color: white;
     cursor: default;
 }
 
 .link {
     text-decoration: none;
-    color: white;
+    color: #BEBEBF;
     font-family: 'Poppins', sans-serif;
     margin-top: 5px;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.titulo-azul {
+    color: #007DFA;
+}
+
+.entrar-link{
+    color: #007DFA;
 }

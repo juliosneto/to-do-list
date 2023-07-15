@@ -45,6 +45,7 @@ nav {
     border-radius: 25px;
     background: #FFB6C1;
     border: none;
+    cursor: pointer;
 }
 
 .img {

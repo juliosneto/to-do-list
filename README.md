@@ -32,7 +32,7 @@ git clone https://github.com/juliosneto/to-do-list.git
 
 <br>
 
-2.1º Pelo terminal acesse a pasta da Server usando o comando cd
+2.1º Pelo terminal, acesse a pasta da Server usando o comando cd
 
 ```
 cd src/Services/Server

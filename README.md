@@ -42,7 +42,7 @@ cd src/Services/Server
 ```
  npx nodemon
 ```
-4º Para rodar a parte do front-end da aplicação digite no terminal raiz do projeto:
+4º Para rodar a parte do front-end da aplicação, abra um outro terminal e digite na pasta raiz do projeto:
 
 ```
  npm start

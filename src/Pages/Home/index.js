@@ -2,7 +2,6 @@ import "./Home.css"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Logout from "../imgs/logout.png"
 import Check from "../imgs/check.png"
 
 export default function Home () {
@@ -13,16 +12,27 @@ export default function Home () {
     const navigate = useNavigate()
 
     useEffect(() => {
+        
         const loadTarefas = async () => {
-            try {
-                const response = await axios.get("http://localhost:3001/receberTarefa")
-                setTarefas(response.data)
-            } catch (error) {
-                console.error(error)
-            }
+          
+          const token = localStorage.getItem("token")
+    
+          try {
+            
+            const response = await axios.get("http://localhost:3001/receberTarefa", {
+              headers: { Authorization: token },
+            })
+    
+            
+            setTarefas(response.data)
+          } catch (error) {
+            console.error(error)
+          }
         }
+    
+        
         loadTarefas()
-    }, [])
+      }, [])
 
     useEffect(() => {
         const fetchUser = async() => {
@@ -46,15 +56,20 @@ export default function Home () {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        const token = localStorage.getItem("token")
+        const dados = { tarefa }
+      
         try {
-            const response = await axios.post("http://localhost:3001/inserirTarefa", {tarefa})
-            const novaTarefa = {id: response.data.id, tarefa}
-            setTarefas((prevTarefas) => [...prevTarefas, novaTarefa])
-            setTarefa("")
+          const response = await axios.post("http://localhost:3001/inserirTarefa", dados, {
+            headers: { Authorization: token }
+          })
+          const novaTarefa = { id: response.data.id, tarefa }
+          setTarefas((prevTarefas) => [...prevTarefas, novaTarefa])
+          setTarefa("")
         } catch (error) {
-            console.error(error)
+          console.error(error)
         }
-    }
+      }
 
     const removerTarefa = async(tarefaId) => {
         try {
